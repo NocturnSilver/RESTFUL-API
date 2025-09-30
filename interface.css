@@ -1,0 +1,70 @@
+/* --------------------------- GRID Section ------------------------ */
+
+body {
+    display: grid;
+    grid-template-rows: 0.5fr 2fr 2fr;
+    grid-template-columns: 2fr 1fr 20fr; /* or adjust based on layout needs */
+    gap: 20px;
+    padding: 20px;
+    grid-template-areas:
+      "header header header"
+      "inputs inputs descriptions"
+      "results results descriptions";
+  }
+  
+  /* Assign areas */
+  header {
+    grid-area: header;
+    background-color: orange;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    font-size: 1vw;
+  }
+  
+  #inputs {
+    grid-area: inputs;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  #results {
+    grid-area: results;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  #descriptions {
+    grid-area: descriptions;
+    background: #fafafa;
+    padding: 10px;
+    border: 1px solid #ddd;
+    overflow-y: auto;
+    overflow-x:auto;
+    max-height: 90vh;
+  }
+
+fieldset {
+    width: 1vw;
+}
+
+dl {
+    margin: 0.2vw;
+    padding: 0.3vw;
+}
+
+dd {
+    background-color: darkgrey;
+    margin-left: 0;
+    margin-bottom: 0.4vw;
+    padding: 0.8vw;
+}
+  
+  /* Optional: reset margins/padding */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  

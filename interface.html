@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+    <head>
+        <title> Interface </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Nathan Vance See">
+        <meta name="description" content="Web Service for team sports">
+        <meta name="keywords" content="Web Service, Team, Sports">
+        <link rel="stylesheet" media='screen' href="interface.css">
+    </head>
+    
+    <body>
+        <header>
+            <h1>Web Service Interface</h1>
+        </header>
+
+        <section id="inputSection">
+
+            <form id="inputs">
+                <fieldset>
+                    <label for="methods">HTTP Method</label><br>
+                    <select id="methods" name="methods"></select><br>
+
+                    <label for="resource">Resource path</label><br>
+                    <textarea id="resource" name="resource" cols="100"></textarea><br>
+
+                    <label for="jsonBody">JSON body</label><br>
+                    <textarea id="jsonBody" name="jsonBody" rows="10" cols="100"></textarea><br>
+
+                    <input type="submit" value="submit" id="submission">
+                </fieldset>
+            </form>
+            
+            
+        </section>
+
+        <section id="results">
+
+            <form>
+                <fieldset>
+                    <label for="status">HTTP Status Code</label><br>
+                    <textarea id="status" name="status" cols="100" readonly></textarea><br>
+
+                    <label for="responseBody">Resource path</label><br>
+                    <textarea id="responseBody" name="responseBody" rows="10" cols="100" readonly></textarea><br>
+
+                    <input type="submit" value="clear" id="clear">
+                </fieldset>
+            </form>
+            
+            
+        </section>
+        
+        <section name="description" id="descriptions">
+            <dl>
+              <dt>Request method for retrieving information on all teams</dt>
+              <dd>GET</dd>
+              <dt>Resource path for retrieving information on all teams</dt>
+              <dd>https://student.csc.liv.ac.uk/~sgnsee/v1/teams</dd>
+
+              <dt>Request method for retrieving information on all players of team {teamId}</dt>
+              <dd>GET</dd>
+              <dt>Resource path for retrieving information on all players of team {teamId}</dt>
+              <dd>https://student.csc.liv.ac.uk/~sgnsee/v1/teams/{teamId}/players</dd>   
+
+              <dt>Request method for retrieving information on player {playerId} of team {teamId}</dt>
+              <dd>GET</dd>
+              <dt>Resource path for retrieving information on player {playerId} of team {teamId}</dt>
+              <dd>https://student.csc.liv.ac.uk/~sgnsee/v1/teams/{teamId}/players/{playerId}</dd> 
+                 
+              <dt>Request method for adding a player to team {teamId}</dt>
+              <dd>POST</dd>
+              <dt>Resource path for adding a player to team {teamId}</dt>
+              <dd>https://student.csc.liv.ac.uk/~sgnsee/v1/teams/{teamId}/players</dd>
+              <dt>Sample request body for adding a player to team {teamId}<dt>
+              <dd>
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; "surname": "John", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; "givenName": "Smith", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; "nationality": "British", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; "dob": "2000-01-31" <br>   
+                    }
+              </dd>
+
+              <dt>Request method for updating parts of the information on player {playerId} of team {teamId}</dt>
+              <dd>PATCH</dd>
+              <dt>Resource path for updating parts of the information on player {playerId} of team {teamId}</dt>
+              <dd>https://student.csc.liv.ac.uk/~sgnsee/v1/teams/{teamId}/players/{playerId}</dd>
+              <dt>Sample request body for updating parts of the information on player {playerId} of team {teamId}<dt>
+              <dd>
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; "surname": "Jason", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; "givenName": "Borne", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; "nationality": "American", <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; "dob": "2000-02-01" <br>   
+                    }
+              </dd>
+
+              <dt>Request method for deleting player {playerId} from team {teamId}</dt>
+              <dd>DELETE</dd>
+              <dt>Resource path for deleting player {playerId} from team {teamId}</dt>
+              <dd>https://student.csc.liv.ac.uk/~sgnsee/v1/teams/{teamId}/players/{playerId}</dd>
+            </dl>
+          </section>
+          <script src="interface.js"></script>
+    </body>
+</html>
